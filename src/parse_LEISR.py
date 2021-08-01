@@ -4,6 +4,7 @@
 Parse HyPhy output file = protein rate JSON into a CSV
 
 Author: Stephanie J. Spielman, Dariya K. Sydykova
+modified by Hao
 '''
 
 # load packages required to run this script
@@ -14,8 +15,8 @@ import textwrap
 # this function produces a CSV file from a JSON file outputted by HyPhy
 def parse_json(relprot_json_file, relprot_csv_file):
 
-    with open (relprot_json_file , "rU") as f:
-        parsed_json = json.load(f)
+    with open (relprot_json_file) as f:
+        parsed_json = json.load(f, strict=False)
 
     site_block =  parsed_json[ "MLE" ][ "content" ][ "0" ]
     final_header = "Site,Rate,lower_bound_95CI,upper_bound_95CI\n"
