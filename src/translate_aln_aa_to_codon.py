@@ -1,7 +1,13 @@
 #!/usr/bin/python
 
 '''
-This script takes in an amino acid multiple sequence alignment (MSA) in FASTA format and converts it to a nucleotide MSA in FASTA format. The outputted MSA will contain nucleotides while preserving the amino acid alignment. For example, if a site contains a column of 'I-K' (1 isoleucines, 1 gap, and 1 lysine), the outputted file will contain 'ATA---AAA' (1 codon for isoleucine, 1 gap, and 1 codon for lysine) at that site. The correct codon for each amino acid will be extracted from the original nucleotide MSA (`nuc_seq_file` in the script).
+This script takes in an amino acid multiple sequence alignment (MSA) in FASTA 
+format and converts it to a nucleotide MSA in FASTA format. The outputted MSA
+will contain nucleotides while preserving the amino acid alignment. For example,
+if a site contains a column of 'I-K' (1 isoleucines, 1 gap, and 1 lysine), the 
+outputted file will contain 'ATA---AAA' (1 codon for isoleucine, 1 gap, and 1
+codon for lysine) at that site. The correct codon for each amino acid will be 
+extracted from the original nucleotide MSA (`nuc_seq_file` in the script).
 
 Author: Dariya K. Sydykova
 '''
@@ -118,3 +124,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    
