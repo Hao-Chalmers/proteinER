@@ -49,6 +49,7 @@ def back_translate(aa_aln, codon_dict, out_aln_file, gencode):
         # check if sequence ID from amino acid alignment is present in the codon sequence file
         if aa_seq.id in codon_dict:
             old_codon_rec=codon_dict[aa_seq.id] # if it is, get the codon sequence 
+            print(aa_seq.id)
         else:
             print("Amino acid alignment sequence IDs do not match codon sequence IDs")
             sys.exit()
@@ -69,6 +70,9 @@ def back_translate(aa_aln, codon_dict, out_aln_file, gencode):
             # else, get a codon that corresponds to the amino acid
             else: 
                 codon = old_codon_seq[i:i+3]
+    
+                if aa_seq.id == "":
+                    print(f"{gencode[codon]}: {aa}")
                 
                 # use the genetic code to check that a given codon belongs to its amino acid
                 if gencode[codon] != aa:
