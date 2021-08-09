@@ -14,7 +14,7 @@ import textwrap
 # this function produces a CSV file from a JSON file outputted by HyPhy
 def parse_json(fel_json_file, fel_csv_file):
 
-    with open (fel_json_file , "rU") as f:
+    with open (fel_json_file) as f:
         parsed_json = json.load(f)
 
     site_block =  parsed_json[ "MLE" ] 
