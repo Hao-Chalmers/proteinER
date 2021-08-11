@@ -64,6 +64,10 @@ def back_translate(aa_aln, codon_dict, out_aln_file, gencode):
 
         # loop over amino acids in a sequence
         for aa in aa_seq.seq: 
+
+            #if aa_seq.id == "":
+            #    print(aa)
+
             # if there is a gap, change an amino acid gap to match a codon gap
             if aa == "-":
                 new_codon_seq += "---"
